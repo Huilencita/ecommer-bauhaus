@@ -48,7 +48,6 @@ function mostrar() {
     modalC.style.opacity= "1";
     modalC.style.visibility= "visible";
     modalC.classList.toggle("modal-close");
-    mostrarResultado();
 };
 
 cerrar.addEventListener("click", function(){
@@ -72,11 +71,6 @@ function renderItems (){
 //sumar la cantidad + el precio
 //meterlo en el modal
 
-function mostrarResultado (){
-    cardBtn.addEventListener('click', function(){
-        let modalContent = document.getElementById("modal-pop");
-        modalContent.innerHTML = `<h1>PUTA</h1>`
-    }); 
-}
+
 
 
