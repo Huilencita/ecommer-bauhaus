@@ -70,7 +70,3 @@ function renderItems (){
 
 //sumar la cantidad + el precio
 //meterlo en el modal
-
-
-
-

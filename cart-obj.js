@@ -10,23 +10,28 @@
     //agregar al carrito
     this.addItems = function(item){ 
         this.items.push(item);    
-        console.log(this.addItems);
         }
     //mostrar el total
+    this.totalItems = function() {
+        result = 0;
+        items.forEach(item => {
+            result += item.price;
+            console.log(result);
+            return result
+        });
+    }
     //cargarlo en el storage
     }
-    
+
+    //INSTANCIO OBJ
 var miCarrito = new Carrito();
 
-miCarrito.addItems(listOfProducts);
-
-
-
-
-
-
-
-
+//PUSHEO AL CARRITO LOS ITEMS
+miCarrito.addItems(listOfProducts[0]);
+miCarrito.addItems(listOfProducts[1]);
+miCarrito.addItems(listOfProducts[2]);
+miCarrito.addItems(listOfProducts[3]);
+miCarrito.addItems(listOfProducts[4]);
 
 
 // PRUEBAS
