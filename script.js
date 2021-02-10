@@ -61,12 +61,31 @@ cerrar.addEventListener("click", function(){
 
 //to do fix transform effects
 
-function renderItems (){
-    for (let info of listOfProducts){
-        
-    }
-}
+
+//PRUEBAS
 // to do guardar la cantidad
 
 //sumar la cantidad + el precio
+
 //meterlo en el modal
+
+//mi funcion tiene que:
+//mostrarme el total del producto x item
+//sumar la cantidad de productos que se agreguen
+
+
+/* function mostrarAlgo  (){
+    abrir.addEventListener('click', function(){
+        items.forEach(product => {
+            if (abrir[product].value == product.price){
+                let modalText = document.getElementById("modal-pop");
+                modalText.innerHTML = `
+                    <h4>Cantidad de productos seleccionados:</h24>
+                    <h2>Total: ${product.price}</h2>`
+                } 
+        });
+    })
+}
+
+mostrarAlgo();
+ */

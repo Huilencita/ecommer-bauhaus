@@ -4,8 +4,8 @@
  //calcula el total de los items
  //guarda los datos de los items (storage)
  //elimina items 
- 
- function Carrito (){
+
+function Carrito (){
     this.items = [];
     //agregar al carrito
     this.addItems = function(item){ 
@@ -24,7 +24,7 @@
     }
 
     //INSTANCIO OBJ
-var miCarrito = new Carrito();
+const miCarrito = new Carrito();
 
 //PUSHEO AL CARRITO LOS ITEMS
 miCarrito.addItems(listOfProducts[0]);
@@ -34,26 +34,30 @@ miCarrito.addItems(listOfProducts[3]);
 miCarrito.addItems(listOfProducts[4]);
 
 
-// PRUEBAS
-/* var resultadoDeCarrito = 0;
+// PRUEBAS 2 y 3
 
-document.getElementById("carrito").innerHTML = resultadoDeCarrito;
-
-function sumarAlCarrito(item){
-    resultadoDeCarrito = resultadoDeCarrito + item;
-}
- */
- 
-
- function mostrarAlgo (listOfProducts) {
-     listOfProducts.forEach(item => {
-        let modalText = document.getElementById("modal-pop");
-        modalText.innerHTML = `
+/* function mostrarAlgo (listOfProducts) {
+    listOfProducts.forEach(item => {
+    let modalText = document.getElementById("modal-pop");
+    modalText.innerHTML = `
             <h4>Cantidad de productos seleccionados:</h24>
-            <h2>Total: ${item.price}</h2>`
+            <h2>Total: ${item.price}</h2>
+            `;
 
      });
  }
+ */
+ function mostrarModal() {
+    let total = 0;
+    miCarrito.items.forEach(item => {
+       total += item.price;
+    });
+    let modalText = document.getElementById("modal-pop");
+       modalText.innerHTML = `
+           <h4>Cantidad de productos seleccionados:</h24>
+           <h2>Total: ${total}</h2>
+       `
+}
 
- mostrarAlgo(listOfProducts);
+mostrarModal();
 
