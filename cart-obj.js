@@ -5,6 +5,8 @@
  //guarda los datos de los items (storage)
  //elimina items 
 
+
+/* 
 function Carrito (){
     this.items = [];
     //agregar al carrito
@@ -22,17 +24,18 @@ function Carrito (){
     }
     //cargarlo en el storage
     }
-
+ */
     //INSTANCIO OBJ
-const miCarrito = new Carrito();
+/* const miCarrito = new Carrito();
+miCarrito.saveStorage(); */
 
 //PUSHEO AL CARRITO LOS ITEMS
-miCarrito.addItems(listOfProducts[0]);
+/* miCarrito.addItems(listOfProducts[0]);
 miCarrito.addItems(listOfProducts[1]);
 miCarrito.addItems(listOfProducts[2]);
 miCarrito.addItems(listOfProducts[3]);
 miCarrito.addItems(listOfProducts[4]);
-
+ */
 
 // PRUEBAS 2 y 3
 
@@ -47,7 +50,7 @@ miCarrito.addItems(listOfProducts[4]);
      });
  }
  */
- function mostrarModal() {
+/*  function mostrarModal() {
     let total = 0;
     miCarrito.items.forEach(item => {
        total += item.price;
@@ -59,5 +62,32 @@ miCarrito.addItems(listOfProducts[4]);
        `
 }
 
-mostrarModal();
+mostrarModal(); */
 
+/*  function mostrarModal() {
+ 
+const total = carrito.items.reduce((acc, current) => {
+acc = acc + current
+}, 0);
+    let modalText = document.getElementById("modal-pop");
+       modalText.innerHTML = `
+           <h4>Cantidad de productos seleccionados:</h24>
+           <h2>Total: ${total}</h2>
+       `
+}
+
+mostrarModal(); */
+
+/* function mostrarModal() {
+ 
+    const total = carrito.items.reduce((acc, current.price) => {
+    acc = acc + current
+    }, 0);
+        let modalText = document.getElementById("modal-pop");
+           modalText.innerHTML = `
+               <h4>Cantidad de productos seleccionados:</h24>
+               <h2>Total: ${total}</h2>
+           `
+    }
+    
+    mostrarModal(listOfProducts); */
