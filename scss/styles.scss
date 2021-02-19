@@ -1,7 +1,7 @@
 $white: #fff;
 $red: rgb(181, 37, 32);
 $blue: #2332f7;
-$yellow: #ede500;
+$yellow: #ffef5b;
 $light-gray: #c8c8c8;
 $dark-gray: #a7a7a7;
 ///font-family: 'Roboto', sans-serif;
@@ -27,7 +27,8 @@ h2,
 h3,
 h4,
 p,
-a {
+a,
+button {
     font-family: $font-family;
     color: black;
 }
@@ -161,4 +162,45 @@ header {
 
 .modal-close  {
     /* transform: translateY(-200%); */
+}
+
+.animation {
+    color: white;
+    background-color: black;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    border-radius: 15px;
+    padding: 15px 20px;
+    text-align: center;
+    min-width: 200px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+    span {
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        opacity: 0;
+        background-color: $white;
+        border-radius: 50%;
+    }
+    span.active {
+        animation: clickEffect 0.5s;
+
+    }
+}
+
+@keyframes clickEffect {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(100);
+        opacity: 0;
+    }
 }

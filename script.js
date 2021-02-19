@@ -1,27 +1,16 @@
-//declaro variables
+//container de las cards
 const bodyContent = document.getElementById("cart-container");
-//variable del ciclo en el body
+//cards
 const cardProduct = document.getElementById("card-product");
-// variable para agregar al carrito
+//boton agregar al carrito
 const cardBtn = document.getElementById("card-btn");
 
+let cart = [];
 
-//objeto carrito
+//funciones
 
-function Cart (){
-    this.items = [];
-    
-    this.saveStorage = function (){
-        localStorage.setItem('cart', JSON.stringify(listOfProducts));
-        sessionStorage.setItem ('cart',JSON.stringify(listOfProducts));
-    }
-  
-}
+//mostrar en pantalla
 
-let myCart = new Cart();
-myCart.saveStorage()
-
-//imprimir los productos
 function showProducts(listOfProducts){
     bodyContent.innerHTML = "";
     listOfProducts.forEach(function(product){
@@ -38,11 +27,7 @@ function buildProduct(product) {
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <h2 class ="price">${product.price}</h2>   
-            </div>
-            <div class="cant-stock">
-                <input type="number" class="input">
-                <label for="id-${product.id}">Cantidad</label>
-            </div>  
+            </div> 
             <button id="${product.id}" class="cta" onclick="mostrar()" type="submit" value="${product.price}">Agregar al Carrito</button>
         </div>
         `;
@@ -50,6 +35,7 @@ function buildProduct(product) {
     }
 showProducts(listOfProducts);
 
+//primero tengo que mostrarlos en el modal y despues los meto en el carrito
 
 //Modal resultado del carrito
 
@@ -73,9 +59,36 @@ cerrar.addEventListener("click", function(){
     
 })
 
+
+//agregar productos al carrito
+
+if (localStorage.getItem("cart") != null) {
+    console.log("Entro a la validacion");
+    let valoresDelCarrito = JSON.parse(localStorage.getItem("cart"));
+    carrito = valoresDelCarrito;
+  }
+  
+  function agregarAlCarrito(listOfProducts) {
+    cart.push(listOfProducts);
+    localStorage.setItem("cart", JSON.stringify(carrito));
+    console.log(listOfProducts)
+  }
+
+
+function addingEventAdd(){
+    let btnList = document.querySelectorAll(".cta");
+    console.log(btnList)
+    for (const button of btnList) {
+        button.addEventListener('click', agregarAlCarrito(JSON.stringify(cart)))
+    }
+
+}
+
+addingEventAdd();  
+
 //mostrar precio en el modal
 
-let inputs = document.querySelectorAll('.cta');
+/* let inputs = document.querySelectorAll('.cta');
   
   inputs.forEach(function(item) {
     item.addEventListener('click', function(e) {
@@ -87,7 +100,7 @@ let inputs = document.querySelectorAll('.cta');
     });
   });
 
-
+ */
 //to do fix transform effects
 
 
@@ -97,57 +110,3 @@ let inputs = document.querySelectorAll('.cta');
 //mostrarme el total del producto x item
 //sumar la cantidad de productos que se agreguen
 
-//prueba 1
-/* function mostrarAlgo  (){
-    abrir.addEventListener('click', function(){
-        items.forEach(product => {
-            if (abrir[product].value == product.price){
-                let modalText = document.getElementById("modal-pop");
-                modalText.innerHTML = `
-                    <h4>Cantidad de productos seleccionados:</h24>
-                    <h2>Total: ${product.price}</h2>`
-                } 
-        });
-    })
-}
-
-mostrarAlgo();
- */
-
-/* function addToCart (){
-    for (let i = 0; i < listOfProducts.length; i++) {
-        let idProduct = document.querySelectorAll('.cta');
-        const productToAdd = document;
-        myCart.items.push(productToAdd); 
-    }
-} */
-
-//mostrar productos en modal
-
-
-//funcion para transformar el btn en su valor
-/*   function verValor(){
-    for(let i = 0; i < inputs.length; i++){
-      let valorInput = inputs[i].value;
-      console.log(valorInput)
-    }
-  }
-console.log(verValor()); */
-  
-//funcion para agregar al carrito
-
-
-/* function pruebaAgregarCarrito (product){
-    for(let i = 0; i < listOfProducts.length; i++){
-        let product = listOfProducts[i];
-        if(product.id = )
-
-    }
-    
-    
-}
-
-pruebaAgregarCarrito()
- */
-  
-  

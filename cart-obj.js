@@ -1,93 +1,49 @@
- //QUE VA A HACER MI CARRITO
+ //QUE VA A HACER MI CARRITO 
 
- //Tiene items
- //calcula el total de los items
- //guarda los datos de los items (storage)
- //elimina items 
-
-
-/* 
-function Carrito (){
-    this.items = [];
-    //agregar al carrito
-    this.addItems = function(item){ 
-        this.items.push(item);    
-        }
-    //mostrar el total
-    this.totalItems = function() {
-        result = 0;
-        items.forEach(item => {
-            result += item.price;
-            console.log(result);
-            return result
-        });
-    }
-    //cargarlo en el storage
-    }
- */
-    //INSTANCIO OBJ
-/* const miCarrito = new Carrito();
-miCarrito.saveStorage(); */
-
-//PUSHEO AL CARRITO LOS ITEMS
-/* miCarrito.addItems(listOfProducts[0]);
-miCarrito.addItems(listOfProducts[1]);
-miCarrito.addItems(listOfProducts[2]);
-miCarrito.addItems(listOfProducts[3]);
-miCarrito.addItems(listOfProducts[4]);
- */
-
-// PRUEBAS 2 y 3
-
-/* function mostrarAlgo (listOfProducts) {
-    listOfProducts.forEach(item => {
-    let modalText = document.getElementById("modal-pop");
-    modalText.innerHTML = `
-            <h4>Cantidad de productos seleccionados:</h24>
-            <h2>Total: ${item.price}</h2>
-            `;
-
-     });
- }
- */
-/*  function mostrarModal() {
-    let total = 0;
-    miCarrito.items.forEach(item => {
-       total += item.price;
-    });
-    let modalText = document.getElementById("modal-pop");
-       modalText.innerHTML = `
-           <h4>Cantidad de productos seleccionados:</h24>
-           <h2>Total: ${total}</h2>
-       `
-}
-
-mostrarModal(); */
-
-/*  function mostrarModal() {
- 
-const total = carrito.items.reduce((acc, current) => {
-acc = acc + current
-}, 0);
-    let modalText = document.getElementById("modal-pop");
-       modalText.innerHTML = `
-           <h4>Cantidad de productos seleccionados:</h24>
-           <h2>Total: ${total}</h2>
-       `
-}
-
-mostrarModal(); */
-
-/* function mostrarModal() {
- 
-    const total = carrito.items.reduce((acc, current.price) => {
-    acc = acc + current
-    }, 0);
-        let modalText = document.getElementById("modal-pop");
-           modalText.innerHTML = `
-               <h4>Cantidad de productos seleccionados:</h24>
-               <h2>Total: ${total}</h2>
-           `
-    }
-    
-    mostrarModal(listOfProducts); */
+ function CartFunctions() {
+    //Tiene items
+    //agregar los items al carrito
+    //calcula el total de los items
+    //guarda los datos de los items (storage)
+    //elimina items 
+       this.products = listOfProducts;
+       this.addItems = function () {
+           let cardBtn = document.querySelectorAll('.cta');
+   
+           cardBtn.forEach(btn =>{
+               let id = btn.id;
+               let inCart = cart.find(item => item.id == id);
+               if(inCart){
+                   btn.innerText = "Agregado";
+                   btn.disabled = true;
+               }
+               btn.addEventListener("click", event => {
+                   event.target.innerText = "Agregado";
+                   event.target.disabled = true;
+   
+                   let cartItem = this.getProductStorage(id);
+                   cart.push(cartItem);
+                   console.log(cartItem);
+                   this.saveCart(cart)
+               });
+           });
+       } 
+       this.saveStorageProducts = function(products) {
+           localStorage.setItem('products', JSON.stringify(products));    
+       }
+       this.getProductStorage = function (id){
+           let products = JSON.parse(localStorage.getItem("products"));
+           let productSeleccionado = products.find(product => product.id == id)
+           return productSeleccionado; 
+           
+       }
+       this.saveCart = function (cart) {
+           localStorage.setItem("cart", JSON.stringify(cart));
+       }
+   
+   }
+   
+   let myCart = new CartFunctions();
+   myCart.saveStorageProducts(listOfProducts);
+   myCart.addItems();
+   
