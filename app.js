@@ -43,6 +43,16 @@ $(document).ready(function(){
     });
 });
 
+//showMenu
+
+let iconMenu = $("#navbar-logo");
+function showMenu (){
+    iconMenu.click(function(){
+        $(".navbar-menu").toggleClass('displayMenu');
+    })
+}
+showMenu()
+
 //display cards
 function displayCards (products){
     let result = "";
