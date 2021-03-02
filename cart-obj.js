@@ -8,48 +8,48 @@
     //elimina items 
        this.products = listOfProducts;
        this.addItems = function () {
-           let cardBtn = document.querySelectorAll('.cta');
-   
-           cardBtn.forEach(btn =>{
-               let id = btn.id;
-               
-               let inCart = cart.find(item => item.id == id);
-               if(inCart){
+            let cardBtn = document.querySelectorAll('.cta');
+            console.log(cardBtn);
+            cardBtn.forEach(btn =>{
+                let id = btn.id;
+                let inCart = cart.find(item => item.id == id);
+                if(inCart){
                    btn.innerText = "Agregado";
                    btn.disabled = true;
-               }
-               btn.addEventListener("click", event => {
+                }
+                btn.addEventListener('click', event => {
+                    console.log(event);
                     event.target.innerText = "Agregado";
                     event.target.disabled = true;
    
                     let cartItem = this.getProductStorage(id);
                     cart.push(cartItem);
-                    console.log(cart);
                     let cartInCart = cartIcon.html(cart.length);
                     cartInCart;
+                    showItems();
                     this.saveCart(cart);
                     
-               });
-           });
-       } 
+                });
+            });
+        } 
        //guarda en el storage la lista de todos los productos
-       this.saveStorageProducts = function(products) {
-           localStorage.setItem('products', JSON.stringify(products));    
+        this.saveStorageProducts = function(products) {
+            localStorage.setItem('products', JSON.stringify(products));    
        }
 
-       this.getProductStorage = function (id){
-           let products = JSON.parse(localStorage.getItem("products"));
-           let productSeleccionado = products.find(product => product.id == id)
-           return productSeleccionado; 
+        this.getProductStorage = function (id){
+            let products = JSON.parse(localStorage.getItem("products"));
+            let productSeleccionado = products.find(product => product.id == id)
+            return productSeleccionado; 
            
        }
        //guarda en el storage el carrito
-       this.saveCart = function (cart) {
-           localStorage.setItem("cart", JSON.stringify(cart));
-       }
-   }
+        this.saveCart = function (cart) {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+    }
    
-   let myCart = new CartFunctions();
-   myCart.saveStorageProducts(listOfProducts);
-   myCart.addItems();
+let myCart = new CartFunctions();
+myCart.saveStorageProducts(listOfProducts);
+myCart.addItems();
    

@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/> -->
+
+    
     <link rel="stylesheet" href="css/styles.css">
     <script src="bdata.js"></script>
-    <script async defer src="cart-obj.js"></script>
-    <!--<script async defer src="/script.js"></script>-->
-    <script async defer src="app.js"></script>
+    <script asyn defer src="cart-obj.js"></script>
+    <script asyn defer src="app.js"></script>
     <title>The Bauhaus Gallery</title>
 </head>
 <body>
@@ -49,39 +53,75 @@
                 <p>Cant</p>
                 <p>Nombre</p>
                 <p>Precio</p>
-                <p>x</p>
+                <span>
+                    <svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                    <switch>
+                        <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"/>
+                        <g i:extraneous="self">
+                            <polygon points="97.5,14.9 85.1,2.5 50,37.6 14.9,2.5 2.5,14.9 37.6,50 2.5,85.1 14.9,97.5 50,62.4 85.1,97.5 97.5,85.1 62.4,50"/>
+                        </g>
+                    </switch>
+                    </svg>
+                </span>
             </div>
             
             <div class="cart-total">
                 <h3>Total</h2>
-                <h2>totalprecio</h2>
+                <h2>0</h2>
             </div>
             <a class="shop-btn" href="http://">Comprar</a>
         </div>
     </section>
-
+    <button id="topBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+            <g>
+                <polygon points="50,17.2 10.7,85.2 89.3,85.2  "/>
+            </g>
+        </svg>
+    </button>
     <section class="home">
         <div class="home-grid">
-            <div>
-                <p>
-                    Menos es más
-                </p>
+            <div class="shapes">
+                <div class="circle"></div>
+                <div class="triangle"></div>
+                <div id="rectangle" class="rectangle"></div>
             </div>
-            <div class="square-cell"></div>
-            <div class="circle-cell"></div>
-            <div class="circle-cell big-c"></div>
-            <div>
-                <a href="">
-                    <h2>SHOP NOW</h2>
-                </a>
+            <div class="title">
+                <div>
+                    <h2>THE</h2>
+                </div>
+                <div>
+                    <h1>bauhaus</h1>
+                </div>
+                <div>
+                    <h2>STORE</h2>
+                </div> 
             </div>
-            <div>
-                <h1>The Bauhaus Gallery</h1>
+        </div>
+        <div class="less">
+            <p>Less is more</p>
+        </div>
+        <div class="shop">
+            <div class="lines">
+                <div></div>
+                <div></div>
             </div>
-            <div class="circle-cell"></div>
-            <div class="circle-cell"></div>
-            <div class="square-cell"></div>
-            <div class="triangle-cell"></div>
+            <div class="circle-shop-wrapper">
+                <span id="circle-shop" class="animated-element">
+                </span>
+                <div class="shop-now">
+                    <a class="shop-now-btn" href="">SHOP NOW</a>
+                </div>
+            </div>
+            <div class="about">
+                <div class="about-img">
+                    <img src="/asset/bauhaus-shop/3921.png" alt="">
+                </div>
+                <div class="about-text">
+                    <p>The store was born with the intention of delivered a sense of design to every house. We want to everybody acknoledge the Bauhaus movement, not because its "nice to see", but because the central idea is make more out of less.
+                        By doing this, we can create everything we want to.</p>
+                </div>
+            </div>     
         </div>
     </section>
 
@@ -94,11 +134,9 @@
         </div>
     </section>
     <footer>
-        
+        <button class="test-button">Prueba Ajax</button>
     </footer>
-    <script
-  src="https://code.jquery.com/jquery-3.5.1.min.js"
-  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </body>
 </html>
+

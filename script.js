@@ -86,21 +86,6 @@ function addingEventAdd(){
 
 addingEventAdd();  
 
-//mostrar precio en el modal
-
-/* let inputs = document.querySelectorAll('.cta');
-  
-  inputs.forEach(function(item) {
-    item.addEventListener('click', function(e) {
-        let modalText = document.getElementById("modal-pop");
-        const productTotal = e.target.value;
-                modalText.innerHTML = `
-                    <h4>Cantidad de productos seleccionados:</h24>
-                    <h2>Total: ${productTotal}</h2>`;
-    });
-  });
-
- */
 //to do fix transform effects
 
 
