@@ -39,7 +39,7 @@
 
         this.getProductStorage = function (id){
             let products = JSON.parse(localStorage.getItem("products"));
-            let productSeleccionado = products.find(product => product.id == id)
+            let productSeleccionado = products.find(product => product.id == id);
             return productSeleccionado; 
            
        }

@@ -15,9 +15,9 @@ let iconMenu = $("#navbar-logo");
 function showMenu (){
     iconMenu.click(function(){
         $(".navbar-menu").toggleClass('displayMenu');
-    })
+    });
 }
-showMenu()
+showMenu();
 
 //display items
 
@@ -46,13 +46,12 @@ function showItems(){
             <h2>${total}</h2>
         `
         $(".cart-total").html(totalCart);
-        console.console.log(total);
+        console.log(total);
 
         /* return cartItem; */
         /* afterContent.after(cartItem); */
-        afterContent.after(cartItem);
     }); 
-    /* afterContent.after(cartItem); */
+    afterContent.after(cartItem); 
 }
 
 //display navbar cart menu
@@ -61,8 +60,8 @@ $(function() {
     cartLogo.click(function(event) {
         event.preventDefault();
         cartContent.slideToggle(300);
-    })
-}) 
+    });
+});
 
 //display cards
 function displayCards (products){
@@ -89,13 +88,13 @@ displayCards(listOfProducts);
 $(document).ready(function(){
     $(".animation").append('<span></span>');
     $(".animation").click(function(event){
-        let top = $(window).scrollTop() - $(this).offset().top + event.clientY;
-        let left = $(window).scrollLeft() - $(this).offset().left + event.clientX;
+        var top = $(window).scrollTop() - $(this).offset().top + event.clientY;
+        var left = $(window).scrollLeft() - $(this).offset().left + event.clientX;
         $(this).children('span').css({"left": left, "top":top})
         $(this).children('span').addClass('active');
         setTimeout(function(){
             $('.animation span').removeClass('active')
-        }, 500)
+        }, 500);
     });
 });
 
@@ -112,7 +111,7 @@ $(document).ready(function(){
     });
 
     $("#topBtn").click(function(){
-        $('html, body').animate({scrollTop : 0}, 800)
+        $('html, body').animate({scrollTop : 0}, 800);
     })
 })
 
@@ -129,11 +128,10 @@ function check_if_in_view() {
         var element_bottom_position = (element_top_position + element_height);
     
         //check to see if this current container is within viewport
-        if ((element_bottom_position >= window_top_position) &&
-            (element_top_position <= window_bottom_position)) {
-          $element.addClass('in-view');
+        if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+            $element.addClass('in-view');
         } else {
-          $element.removeClass('in-view');
+            $element.removeClass('in-view');
         }
       });
     }

@@ -90,12 +90,15 @@ ul {
     background-color: #F9F7EC;
     position: absolute;
     display: none;
-    z-index: 3;
+    z-index: 4;
     width: 100%;
     .cart-flex {
         display: grid;
         grid-template-columns: 15% 40% 30% 15%;
         grid-template-rows: 50px; 
+        span svg {
+            width: 35px;
+        }
     }
     .cart-total {
         display: flex;
@@ -163,7 +166,7 @@ ul {
         }
         .title {
             position: relative;
-            z-index: 4;
+            z-index: 3;
             padding: 15px 20px;
             h2 {
                 font-size: 37px;
