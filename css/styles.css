@@ -79,8 +79,13 @@ ul {
     display: grid;
     grid-template-columns: 15% 40% 30% 15%;
     grid-template-rows: 50px; }
-    .cart-content .cart-flex span svg {
-      width: 35px; }
+    .cart-content .cart-flex .cart-close-btn {
+      width: 30px;
+      outline: none;
+      cursor: pointer;
+      padding: 6px;
+      border: none;
+      background-color: white; }
   .cart-content .cart-total {
     display: flex;
     flex-direction: row;
@@ -172,26 +177,35 @@ ul {
       border-bottom-width: 0px;
       border-top: 0px;
       border-left: 7px solid black; }
-  .home .shop .circle-shop-wrapper {
-    position: relative; }
-    .home .shop .circle-shop-wrapper #circle-shop {
-      position: absolute;
+  .home .shop .animated {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-top: 150px; }
+    .home .shop .animated .test1 {
       width: 10px;
       height: 10px;
-      background-color: #F2B200;
       border-radius: 100%;
+      background-color: #F2B200;
       -moz-transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
       -webkit-transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
       -o-transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8);
       transition: all 400ms cubic-bezier(0.47, 1.64, 0.41, 0.8); }
-    .home .shop .circle-shop-wrapper .shop-now {
-      /* top: 125px; */
-      width: 100%;
-      height: 100%;
-      align-items: center; }
-      .home .shop .circle-shop-wrapper .shop-now .shop-now-btn {
-        font-size: 43px;
-        font-weight: bold; }
+      .home .shop .animated .test1 .test-shape {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blue; }
+      .home .shop .animated .test1 .test-ontop {
+        position: absolute;
+        font-size: 50px;
+        font-weight: bolder;
+        color: black;
+        background-color: none; }
   .home .shop .about {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -200,11 +214,11 @@ ul {
     .home .shop .about .about-img img {
       width: 100%; }
 
-.in-view {
-  transform: scale(15);
-  -moz-transform: scale(15);
-  -webkit-transform: scale(15); }
-
+/* .in-view {
+    transform: scale(15);
+    -moz-transform: scale(15);
+    -webkit-transform: scale(15);
+}  */
 @keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg); }

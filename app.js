@@ -7,6 +7,17 @@ let afterContent = $("#cart-after");
 let cartTotal = $('.cart-total');
 let $animation_elements = $('.animated-element');
 let $window = $(window);
+
+let $cartCloseBtn = $(".cart-close-btn");
+    console.log($cartCloseBtn);
+
+    $(function() {
+        $cartCloseBtn.click(function(event) {
+            event.preventDefault();
+            console.log($cartCloseBtn.id);
+        });
+    });
+
 //cart
 let cart = [];
 //show navbar Menu
@@ -30,14 +41,14 @@ function showItems(){
                 <p>Cant</p>
                 <p>${item.name}</p>
                 <p>${item.price}</p>
-                <span id = ${item.id}><svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                <button class="cart-close-btn" id = ${item.id}><svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
                 <switch>
                     <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"/>
                     <g i:extraneous="self">
                         <polygon points="97.5,14.9 85.1,2.5 50,37.6 14.9,2.5 2.5,14.9 37.6,50 2.5,85.1 14.9,97.5 50,62.4 85.1,97.5 97.5,85.1 62.4,50"/>
                     </g>
                 </switch>
-            </svg></span>
+            </svg></button>
             </div>
         `    
         total = total + precioNum;
@@ -148,3 +159,6 @@ $('.test-button').click (function() {
         }
     )
 })
+
+
+
