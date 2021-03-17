@@ -6,7 +6,6 @@ let cartContent = $('#cart-content');
 let afterContent = $("#cart-after");
 let cartTotal = $('.cart-total');
 
-
 //cart
 let cart = [];
 //show navbar Menu
@@ -18,14 +17,12 @@ function showMenu (){
     });
 }
 showMenu(); */
-
 //display items
 
 function showItems(){
-    cartItems = ''
-    cart.forEach(item => {
-        
-        cartItem = `
+    /* let cartItems = ''; */
+    cart.forEach(item => { 
+        let cartItems = `
             <div class="cart-flex cart-items">
                 <p>Cant</p>
                 <p>${item.name}</p>
@@ -41,20 +38,26 @@ function showItems(){
                     </svg>
                 </button>
             </div>
-        `          
-        cartItems += cartItem
+        `      
+        afterContent.after(cartItems);    
+
     }); 
     
-    afterContent.after(cartItems);
+    
     showTotalInCart();
     myCart.clearCart();
+  /*   afterContent.after(cartItem); */
 } 
 
 function showTotalInCart(){
     let total = 0;
     cart.forEach(item => {
-        let precioNum = parseFloat(item.price);
-        total = total + precioNum;
+        if (cart == 0) {
+            total = 0
+        } else {
+            let precioNum = parseFloat(item.price);
+            total = total + precioNum;
+        }
         let totalCart = `
             <h3>Total</h2>
             <h2>${total}</h2>
@@ -73,9 +76,9 @@ $(function() {
 });
 
 //display cards
-function displayCards (products){
+function displayCards (data){
     let result = "";
-    products.forEach(product => {
+    data.forEach(product => {
         result += `
         <div class="card-product">
             <img src="asset/bauhaus-shop/${product.img}" alt="imagenproducto">
@@ -88,9 +91,10 @@ function displayCards (products){
         </div>
         `
         bodyContent.innerHTML = result;
+        
     });
+    myCart.addItems();
 }
-displayCards(listOfProducts);
 
 //btn agregar al carrito animation
 
@@ -123,7 +127,6 @@ $(document).ready(function(){
         $('html, body').animate({scrollTop : 0}, 800);
     })
 })
-
 
 
 
