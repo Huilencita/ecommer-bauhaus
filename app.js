@@ -66,6 +66,14 @@ function showTotalInCart(){
     }); 
 }
 
+
+//TO DO no cambia el precio total cuando se vacia el carrito
+/* function checkTotalValue (cart){
+    while (cart.length > 0){
+        showTotalInCart();
+    }
+} */
+
 //display navbar cart menu
 
 $(function() {

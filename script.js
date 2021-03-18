@@ -1,97 +1,40 @@
-//container de las cards
-const bodyContent = document.getElementById("cart-container");
-//cards
-const cardProduct = document.getElementById("card-product");
-//boton agregar al carrito
-const cardBtn = document.getElementById("card-btn");
-
-let cart = [];
-
-//funciones
-
-//mostrar en pantalla
-
-function showProducts(listOfProducts){
-    bodyContent.innerHTML = "";
-    listOfProducts.forEach(function(product){
-        const card = buildProduct(product);
-        bodyContent.innerHTML += card;
+//animacions 
+$(function() {
+    cartLogo.click(function(event) {
+        event.preventDefault();
+        cartContent.slideToggle(300);
     });
-}
+});
 
-function buildProduct(product) {
-    let aux = `
-        <div id="card-product">
-            <img src="/asset/bauhaus-shop/${product.img}" alt="">
-            <div>
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <h2 class ="price">${product.price}</h2>   
-            </div> 
-            <button id="${product.id}" class="cta" onclick="mostrar()" type="submit" value="${product.price}">Agregar al Carrito</button>
-        </div>
-        `;
-    return aux;
-    }
-showProducts(listOfProducts);
 
-//primero tengo que mostrarlos en el modal y despues los meto en el carrito
+//btn agregar al carrito animation
 
-//Modal resultado del carrito
+$(document).ready(function(){
+    $(".animation").append('<span></span>');
+    $(".animation").click(function(event){
+        var top = $(window).scrollTop() - $(this).offset().top + event.clientY;
+        var left = $(window).scrollLeft() - $(this).offset().left + event.clientX;
+        $(this).children('span').css({"left": left, "top":top})
+        $(this).children('span').addClass('active');
+        setTimeout(function(){
+            $('.animation span').removeClass('active')
+        }, 500);
+    });
+});
 
-let cerrar = document.getElementById("close");
-let abrir = document.getElementsByClassName("cta");
-let modal = document.getElementById("modal");
-let modalC = document.getElementById("modal-container");
+// reparar on top button
 
-function mostrar() {
-    modalC.style.opacity= "1";
-    modalC.style.visibility= "visible";
-    modalC.classList.toggle("modal-close");
-};
+$(document).ready(function(){
 
-cerrar.addEventListener("click", function(){
-    modal.classList.toggle("modal-close");
-    setTimeout(function(){
-        modalC.style.opacity= "0";
-        modalC.style.visibility= "hidden";
-    }, 800)
-    
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 60){
+            $("#topBtn").fadeIn();
+        } else{
+            $('#topBtn').fadeOut();
+        };
+    });
+
+    $("#topBtn").click(function(){
+        $('html, body').animate({scrollTop : 0}, 800);
+    })
 })
-
-
-//agregar productos al carrito
-
-if (localStorage.getItem("cart") != null) {
-    console.log("Entro a la validacion");
-    let valoresDelCarrito = JSON.parse(localStorage.getItem("cart"));
-    carrito = valoresDelCarrito;
-  }
-  
-  function agregarAlCarrito(listOfProducts) {
-    cart.push(listOfProducts);
-    localStorage.setItem("cart", JSON.stringify(carrito));
-    console.log(listOfProducts)
-  }
-
-
-function addingEventAdd(){
-    let btnList = document.querySelectorAll(".cta");
-    console.log(btnList)
-    for (const button of btnList) {
-        button.addEventListener('click', agregarAlCarrito(JSON.stringify(cart)))
-    }
-
-}
-
-addingEventAdd();  
-
-//to do fix transform effects
-
-
-//PRUEBAS
-
-//mi funcion tiene que:
-//mostrarme el total del producto x item
-//sumar la cantidad de productos que se agreguen
-
