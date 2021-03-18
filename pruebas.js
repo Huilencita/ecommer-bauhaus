@@ -1,4 +1,3 @@
-//variables
 const bodyContent = document.querySelector('#cart-container')
 let cartIcon = $(".cart-cant");
 let cartLogo = $('#navbar-cart');
@@ -6,10 +5,13 @@ let cartContent = $('#cart-content');
 let afterContent = $("#cart-after");
 let cartTotal = $('.cart-total');
 
+$(document).ready(function(){
+    // Todo tu codigo aca
+    //variables
 //cart
 let cart = [];
 
-function CartFunctions() {
+    function CartFunctions() {
         //tomo los productos
         this.products = async () => { 
             try { 
@@ -64,7 +66,7 @@ function CartFunctions() {
                     cart.push(cartItemID);
                     
                     let cartInCart = cartIcon.html(cart.length);
-
+                    console.log(cartItemID);
                     cartInCart;
                     this.showItems(cartItemID);
                     this.saveCart(cart); 
@@ -90,7 +92,7 @@ function CartFunctions() {
         }
 
         //muestro el carrito en el html
-        this.showItems = function(item){
+        this.showItems = function (item){
             /* let cartItems = ''; */
             let cartItems = `
                 <div class="cart-flex cart-items">
@@ -110,12 +112,8 @@ function CartFunctions() {
                 </div>
             `      
             afterContent.after(cartItems);    
-
-            
-            
             this.showTotalInCart();
             this.clearCart();
-          /*   afterContent.after(cartItem); */
         } 
         
        //guarda en el storage la lista de todos los productos
@@ -140,36 +138,33 @@ function CartFunctions() {
         this.clearCart = function(){
             //selectores
             let removeItem = $('button.cart-close-btn');
-
+            console.log(cart);
             removeItem.click(function(){
                 let elementHTML = $(this).closest('.cart-items');
                 elementHTML.remove();  
                 let idBtn = this.id 
                 myElement = cart.find(item => item.id == idBtn);
                 cart = cart.filter(item => item.id != myElement.id)
-                this.saveCart(cart);
-                this.showTotalInCart(cart);
+                console.log(cart);
+                this.showTotalInCart();
                 
-                cartIcon.html(cart.length);
-                
-                
+                cartIcon.html(cart.length); 
+                this.saveCart();  
             })
         }
+        this.savedCart =  function () {
+            if (myCart.getCart() != null){
+               cart = JSON.parse(localStorage.getItem('cart'));
+               cartIcon.html(cart.length);
+            }
+        }
     }
+    let myCart = new CartFunctions();
+    myCart.products();
+    myCart.savedCart();
+    
+});
+
 
    //----------------------------
 
-
-
-
-$(document).ready(function(){
-    let myCart = new CartFunctions();
-    myCart.products();
-    if (myCart.getCart() != null) {
-        //cart es igual a lo que haya
-        cart = JSON.parse(localStorage.getItem("cart"));
-        //mantengo el contador en ese estado
-        cartIcon.html(cart.length);
-    }
-    
-})
