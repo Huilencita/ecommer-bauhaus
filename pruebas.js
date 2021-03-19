@@ -2,14 +2,16 @@ const bodyContent = document.querySelector('#cart-container')
 let cartIcon = $(".cart-cant");
 let cartLogo = $('#navbar-cart');
 let cartContent = $('#cart-content');
-let afterContent = $("#cart-after");
-let cartTotal = $('.cart-total');
 
-$(document).ready(function(){
-    // Todo tu codigo aca
-    //variables
+
 //cart
 let cart = [];
+
+$(document).ready(function(){
+    let afterContent = $("#cart-after");
+    // Todo tu codigo aca
+    //variables
+
 
     function CartFunctions() {
         //tomo los productos
@@ -52,19 +54,18 @@ let cart = [];
                 let id = btn.id;
                 inCart = cart.find(item => item.id == id);
                 //si se recarga deberia quedar grabado ele stado del boton, pero se rompe
-                $(document).ready(function() {
-                    if(inCart){
-                        btn.innerText = "Agregado";
-                        btn.disabled = true;
-                    }
-                });
+                if(inCart){
+                    btn.innerText = "Agregado";
+                    btn.disabled = true;
+                }
                 btn.addEventListener('click', event => {
                     event.preventDefault;
                     event.target.innerText = "Agregado";
                     event.target.disabled = true;
                     let cartItemID = this.getProductStorage(id);
                     cart.push(cartItemID);
-                    
+                    console.log(cartIcon);
+                    alert("aca entra")
                     let cartInCart = cartIcon.html(cart.length);
                     console.log(cartItemID);
                     cartInCart;
@@ -113,7 +114,7 @@ let cart = [];
             `      
             afterContent.after(cartItems);    
             this.showTotalInCart();
-            this.clearCart();
+            /* this.clearCart(); */
         } 
         
        //guarda en el storage la lista de todos los productos
@@ -153,15 +154,17 @@ let cart = [];
             })
         }
         this.savedCart =  function () {
-            if (myCart.getCart() != null){
+            if (this.getCart() != null){
                cart = JSON.parse(localStorage.getItem('cart'));
                cartIcon.html(cart.length);
+               
             }
         }
     }
     let myCart = new CartFunctions();
     myCart.products();
     myCart.savedCart();
+    console.log(myCart.showItems());
     
 });
 

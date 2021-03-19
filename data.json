@@ -28,5 +28,104 @@
     "name" : "Bauhaus Tel Aviv Building",
     "description" : "Tel Aviv is the unique world capital of Bauhaus buildings.",
     "price" : 1050
+},
+{
+    "id" : 6,
+    "img": "bauhaus-2.png",
+    "name" : "Free Curve to the Point",
+    "description" : "Wassily Kandinsky - Free Curve to the Point - Accompanying Sound of Geometric.",
+    "price" : 1244
+},
+{
+    "id" : 7,
+    "img": "bauhaus-3.png",
+    "name" : "Wassily Kandinsky Art",
+    "description" : "To create a work of art is to create the world.",
+    "price" : 2050
+},
+{
+    "id" : 8,
+    "img": "bauhaus-100.png",
+    "name" : "Bauhaus 100",
+    "description" : "Celebrating the 100th aniversary of the Bauhaus school",
+    "price" : 3520
+},
+{
+    "id" : 9,
+    "img": "bauhaus-100-typography.png",
+    "name" : "Bauhaus 100 typography",
+    "description" : "Poster Design, using the 'joschmi' typeface as the main building blocks",
+    "price" : 987
+},
+{
+    "id" : 10,
+    "img": "bauhaus-cradle.png",
+    "name" : "Bauhaus Cradle",
+    "description" : "Michael Kimmerle gives an introduction to the world of the Bauhaus.",
+    "price" : 3520
+},
+{
+    "id" : 11,
+    "img": "everything-starts-from-a-dot.png",
+    "name" : "Everything starts from a dot",
+    "description" : "Wassily Kandinsky was known as a painter for whom creating art was a profoundly spiritual act.",
+    "price" : 1570
+},
+{
+    "id" : 12,
+    "img": "bauhaus-architecture.png",
+    "name" : "Bauhaus Architecture",
+    "description" : "Michael Kimmerle gives an introduction to the world of the Bauhaus.",
+    "price" : 2089
+},
+{
+    "id" : 13,
+    "img": "bauhaus-bauspiel.png",
+    "name" : "Bauhaus Bauspiel",
+    "description" : "Alma Siedhoff-Buscher designed this Bauhaus Bauspiel in 1923 as part of the children’s room in the house “Am Horn” in Weimar, Germany.",
+    "price" : 1120
+},
+{
+    "id" : 14,
+    "img": "less-is-more (1).png",
+    "name" : "Less is more",
+    "description" : "This was the motto of Ludwig Mies van der Rohe, an advocate of minimalism in architecture.",
+    "price" : 1100
+},
+{
+    "id" : 15,
+    "img": "less-is-more.png",
+    "name" : "Less is more",
+    "description" : "This was the motto of Ludwig Mies van der Rohe, an advocate of minimalism in architecture.",
+    "price" : 1100
+},
+{
+    "id" : 16,
+    "img": "ludwig-mies-van-der-rohe.png",
+    "name" : "Ludwig Mies van der Rohe",
+    "description" : "Mies van der Rohe is - along with Gropius and Le Corbusier - one of the founders of modern architecture.",
+    "price" : 1000
+},
+{
+    "id" : 17,
+    "img": "poster-wassily-kandinsky-circles-in-circle-00.jpg",
+    "name" : "Wassily Kandinsky Circles in a Circle 1923",
+    "description" : "The circle, the most elementary of forms, had symbolic, cosmic significance.",
+    "price" : 2600
+},
+{
+    "id" : 18,
+    "img": "van-doesburg.png",
+    "name" : "Van Doesburg",
+    "description" : "Principles of the new creative art. De Stijl's concepts had an impact not only in visual art and architecture, but also in the design of furniture.",
+    "price" : 1000
+},
+{
+    "id" : 19,
+    "img": "wagenfeld-bauhaus-lamp.png",
+    "name" : "Wagenfeld Bauhaus Lamp",
+    "description" : "The Bauhaus Table Lamp embodies the essential idea that form follows function, as espoused by the influential Bauhaus school.",
+    "price" : 1435
 }
+
 ] 

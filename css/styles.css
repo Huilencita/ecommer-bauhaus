@@ -35,7 +35,8 @@ ul {
   position: relative;
   z-index: 5;
   background-color: black;
-  padding: 0 20px; }
+  padding: 0 20px;
+  overflow: hidden; }
   .navbar .navbar-menu {
     min-width: 100vw;
     background-color: black;
@@ -101,7 +102,8 @@ ul {
 
 .home {
   padding-bottom: 100px;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
   .home .home-grid {
     height: 100vh; }
     .home .home-grid .shapes {
@@ -190,8 +192,7 @@ ul {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F2B200;
-        position: relative; }
+        background-color: #F2B200; }
         .home .scroll-container .animated .test-shape .test-ontop {
           font-size: 50px;
           font-weight: bolder;
@@ -199,12 +200,16 @@ ul {
           background-color: none;
           position: absolute; }
     .home .scroll-container .about {
+      padding-top: 150px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      grid-template-rows: repeat(auto-fit, minmax(600px, 1fr)); }
+      grid-template-rows: repeat(auto-fit, minmax(400px, 1fr)); }
       .home .scroll-container .about .about-img img {
         width: 100%; }
+      .home .scroll-container .about :last-child {
+        padding: 0px 15px;
+        text-justify: justify; }
 
 .in-view {
   transform: scale(5);
@@ -297,12 +302,25 @@ ul {
   .cart .cart-container {
     margin: 50px 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr)); }
+    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr)); }
     .cart .cart-container .card-product {
       display: flex;
       flex-direction: column;
       justify-content: center; }
       .cart .cart-container .card-product img {
         width: 100%; }
+
+.footer {
+  margin-top: 150px;
+  background-color: #D30000;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .footer ul li {
+    padding: 20px;
+    text-align: center; }
+    .footer ul li a {
+      font-size: 3rem;
+      color: #F9F7EC; }

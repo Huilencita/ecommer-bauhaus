@@ -43,6 +43,7 @@ ul {
     z-index: 5;
     background-color: black;
     padding: 0 20px;
+    overflow: hidden;
     .navbar-menu {
         min-width: 100vw;
         background-color: black;
@@ -124,6 +125,8 @@ ul {
 .home {
     padding-bottom: 100px;
     width: 100%;
+    overflow: hidden;
+
     .home-grid {
         height: 100vh;
         .shapes {
@@ -230,7 +233,6 @@ ul {
                 justify-content: center;
                 align-items: center;
                 background-color: #F2B200;
-                position: relative;
                 .test-ontop {
                     font-size: 50px;
                     font-weight: bolder;
@@ -242,12 +244,17 @@ ul {
             }
         }
         .about {
+            padding-top: 150px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            grid-template-rows: repeat(auto-fit, minmax(600px, 1fr));
+            grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
             .about-img img {
                 width: 100%;
+            }
+            :last-child {
+                padding: 0px 15px;
+                text-justify: justify;
             }
         }
     }
@@ -368,9 +375,9 @@ ul {
     .cart-container {
         margin: 50px 20px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 20px;
-        grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
         .card-product {
             display: flex;
             flex-direction: column;
@@ -378,6 +385,23 @@ ul {
             img {
                 width: 100%;
             }
+        }
+    }
+}
+
+.footer {
+    margin-top: 150px;
+    background-color: #D30000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul li {
+        padding: 20px;
+        text-align: center;
+        a {
+            font-size: 3rem;
+            color: #F9F7EC;
+            
         }
     }
 }
