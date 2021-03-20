@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="css/styles.css">
     <!-- <script src="bdata.js"></script> -->
-    <script asyn defer src="app-2.js"></script>
-    <script asyn defer src="cart-obj-2.js"></script>
+    <script asyn defer src="/app-2.js"></script>
+    <script asyn defer src="/cart-obj-2.js"></script>
     <title>The Bauhaus Gallery</title>
 </head>
 <body>
@@ -26,17 +26,28 @@
                         </svg>
                     </span>
                     <div class="navbar-menu">
+                        <span id="navbar-close-btn">
+                            <svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                                <switch>
+                                    <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"/>
+                                    <g i:extraneous="self">
+                                        <polygon points="97.5,14.9 85.1,2.5 50,37.6 14.9,2.5 2.5,14.9 37.6,50 2.5,85.1 14.9,97.5 50,62.4 85.1,97.5 97.5,85.1 62.4,50"/>
+                                    </g>
+                                </switch>
+                            </svg>
+                            </svg>
+                        </span>
                         <ul class="menu">
-                            <li><a href="">Living</a></li>
-                            <li><a href="">Fashion</a></li>
-                            <li><a href="">Wathces</a></li>
-                            <li><a href="">Art Gallery</a></li>
-                            <li><a href="">Contacto</a></li>
-                            <li><a href="">Quienes somos</a></li>
+                            <li><a href="index.html">Living</a></li>
+                            <li><a href="index.html">Fashion</a></li>
+                            <li><a href="index.html">Wathces</a></li>
+                            <li><a href="index.html">Art Gallery</a></li>
+                            <li><a href="index.html">Contacto</a></li>
+                            <li><a href="index.html">Quienes somos</a></li>
                         </ul>
                     </div>
                     <div id="navbar-cart" class="navbar-cart">
-                        <a href="">
+                        <a href="index.html">
                             <span id="cart-logo">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 24 30" enable-background="new 0 0 24 24" xml:space="preserve"><g><g><path d="M5.797,3h-3.92v2h2.08l1,12H7.39c-0.317,0.419-0.513,0.935-0.513,1.5c0,1.379,1.121,2.5,2.5,2.5    c1.378,0,2.5-1.121,2.5-2.5c0-0.565-0.195-1.081-0.513-1.5h2.025c-0.317,0.419-0.513,0.935-0.513,1.5c0,1.379,1.121,2.5,2.5,2.5    c1.378,0,2.5-1.121,2.5-2.5c0-0.565-0.195-1.081-0.513-1.5h1.513v-2H6.797L5.797,3z M9.377,19c-0.276,0-0.5-0.225-0.5-0.5    s0.224-0.5,0.5-0.5c0.275,0,0.5,0.225,0.5,0.5S9.652,19,9.377,19z M15.377,19c-0.276,0-0.5-0.225-0.5-0.5s0.224-0.5,0.5-0.5    c0.275,0,0.5,0.225,0.5,0.5S15.652,19,15.377,19z"/><path d="M7.706,14h11.973l2.444-11H6.79L7.706,14z M19.63,5l-1.556,7H9.547L8.964,5H19.63z"/></g></g></svg>
                             </span>
@@ -53,16 +64,6 @@
                 <p>Cant</p>
                 <p>Nombre</p>
                 <p>Precio</p>
-                <span>
-                    <svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-                    <switch>
-                        <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"/>
-                        <g i:extraneous="self">
-                            <polygon points="97.5,14.9 85.1,2.5 50,37.6 14.9,2.5 2.5,14.9 37.6,50 2.5,85.1 14.9,97.5 50,62.4 85.1,97.5 97.5,85.1 62.4,50"/>
-                        </g>
-                    </switch>
-                    </svg>
-                </span>
             </div>
             <div id="cart-items-wrapper">
 
@@ -71,7 +72,7 @@
                 <h3>Total</h2>
                 <h2>0</h2>
             </div>
-            <a class="shop-btn" href="http://">Comprar</a>
+            <a class="shop-btn" href="index.html">Comprar</a>
         </div>
     </section>
     <button id="topBtn">
@@ -139,11 +140,11 @@
     <footer>
         <div class="footer">
             <ul>
-                <li><a href="">Shipping</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">Company</a></li>
-                <li><a href="">Terms and conditions</a></li>
-                <li><a href="">Disclaimer</a></li>
+                <li><a href="index.html">Shipping</a></li>
+                <li><a href="index.html">Contact Us</a></li>
+                <li><a href="index.html">Company</a></li>
+                <li><a href="index.html">Terms and conditions</a></li>
+                <li><a href="index.html">Disclaimer</a></li>
             </ul>
         </div>  
     </footer>

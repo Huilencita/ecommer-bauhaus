@@ -3,103 +3,84 @@ const bodyContent = document.querySelector('#cart-container')
 let cartIcon = $(".cart-cant");
 let cartLogo = $('#navbar-cart');
 let cartContent = $('#cart-content');
-let afterContent = $("#cart-after");
 let cartTotal = $('.cart-total');
+let cartItemsWraper = $("#cart-items-wrapper");
 
 //cart
 let cart = [];
-//show navbar Menu
+//show sidebar menu
 
-/* let iconMenu = $("#navbar-logo");
-function showMenu (){
-    iconMenu.click(function(){
-        $(".navbar-menu").toggleClass('displayMenu');
-    });
-}
-showMenu(); */
+$('#navbar-logo').click(function(){
+    $('.navbar-menu').addClass('menu-active');
+    $('#navbar-log').css("visibility", "hidden");
+})
+
+$('#navbar-close-btn').click(function(){
+    $('.navbar-menu').removeClass('menu-active')
+    $('#navbar-log').css("visibility", "visible");
+})
+
 //display items
 
 function showItems(){
     /* let cartItems = ''; */
-    cart.forEach(item => { 
+    cartItemsWraper.html('');
+    cart.forEach(item => {
         let cartItems = `
             <div class="cart-flex cart-items">
-                <p>Cant</p>
+                <p>${item.amount}</p>
                 <p>${item.name}</p>
                 <p>${item.price}</p>
                 <button class="cart-close-btn" id = ${item.id}>
-                    <svg xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-                        <switch>
-                            <foreignObject requiredExtensions="http://ns.adobe.com/AdobeIllustrator/10.0/" x="0" y="0" width="1" height="1"/>
-                            <g i:extraneous="self">
-                                <polygon points="97.5,14.9 85.1,2.5 50,37.6 14.9,2.5 2.5,14.9 37.6,50 2.5,85.1 14.9,97.5 50,62.4 85.1,97.5 97.5,85.1 62.4,50"/>
-                            </g>
-                        </switch>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" xml:space="preserve">
+                        <polygon points="97.5,14.9 85.1,2.5 50,37.6 14.9,2.5 2.5,14.9 37.6,50 2.5,85.1 14.9,97.5 50,62.4 85.1,97.5 97.5,85.1 62.4,50"/>
                     </svg>
                 </button>
             </div>
-        `      
-        afterContent.after(cartItems);    
+        `;
+        cartItemsWraper.append(cartItems);
+    });
 
-    }); 
-    
-    
+
     showTotalInCart();
     myCart.clearCart();
-  /*   afterContent.after(cartItem); */
-} 
-
-function showTotalInCart(){
-    let total = 0;
-    cart.forEach(item => {
-        if (cart == 0) {
-            total = 0
-        } else {
-            let precioNum = parseFloat(item.price);
-            total = total + precioNum;
-        }
-        let totalCart = `
-            <h3>Total</h2>
-            <h2>${total}</h2>
-        `
-        $(".cart-total").html(totalCart);
-    }); 
 }
 
-
-//TO DO no cambia el precio total cuando se vacia el carrito
-/* function checkTotalValue (cart){
-    while (cart.length > 0){
-        showTotalInCart();
-    }
-} */
+function showTotalInCart() {
+    let total = 0;
+    if (cart.length > 0) cart.forEach(item => {
+        itemNumber = parseFloat(item.amount)
+        total += parseFloat(item.price) * itemNumber;
+    })
+    let totalCart = `
+        <h3>Total</h2>
+        <h2>${total}</h2>`;
+    $(".cart-total").html(totalCart);
+}
 
 //display navbar cart menu
 
-$(function() {
-    cartLogo.click(function(event) {
-        event.preventDefault();
-        cartContent.slideToggle(300);
-    });
-});
-
+$("#navbar-cart").click(function(e){
+    e.preventDefault();
+    $('#cart-content').toggleClass('active')
+})
 //display cards
 function displayCards (data){
     let result = "";
     data.forEach(product => {
         result += `
-        <div class="card-product">
+        <div class="card-product" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
             <img src="asset/bauhaus-shop/${product.img}" alt="imagenproducto">
             <div>
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
-                <h2 class ="price">${product.price}</h2>   
-            </div> 
+                <h2 class ="price">${product.price}</h2>
+            </div>
             <button id="${product.id}" class="cta animation"  type="submit" value="${product.price}">Agregar al Carrito</button>
         </div>
         `
         bodyContent.innerHTML = result;
-        
+
     });
     myCart.addItems();
 }

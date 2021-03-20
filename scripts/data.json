@@ -3,94 +3,109 @@
     "img": "bauhaus-building.png",
     "name" : "Bauhaus Building",
     "description" : "Michael Kimmerle gives an introduction to the world of the Bauhaus.",
-    "price" : 1200
+    "price" : 1200,
+    "amount" : 1
+    
 }, {
     "id" : 2,
     "img": "bauhaus-1.png",
     "name" : "Bauhaus Exhibition 1923",
     "description" : "Herbert Bayer Poster Bauhaus Exhibition Weimar July - Sept 1923",
-    "price" : 2000
+    "price" : 2000,
+    "amount" : 1
 },{
     "id" : 3,
     "img": "bauhaus-staircase.png",
     "name" : "Bauhaus Staircase",
     "description" : "Iconic Stairs in the Bauhaus building in Dessau Germany by Walter Gropius",
-    "price" : 1780
+    "price" : 1780,
+    "amount" : 1
 }, {
     "id" : 4,
     "img": "poster-bauhaus-tel-aviv-00.jpg",
     "name" : "Bauhaus Tel Aviv",
     "description" : "Tel Aviv is the unique world capital of Bauhaus buildings.",
-    "price" : 1050
+    "price" : 1050,
+    "amount" : 1
 }, {
     "id" : 5,
     "img": "poster-bauhaus-tel-aviv-v2-00.jpg",
     "name" : "Bauhaus Tel Aviv Building",
     "description" : "Tel Aviv is the unique world capital of Bauhaus buildings.",
-    "price" : 1050
+    "price" : 1050,
+    "amount" : 1
 },
 {
     "id" : 6,
     "img": "bauhaus-2.png",
     "name" : "Free Curve to the Point",
     "description" : "Wassily Kandinsky - Free Curve to the Point - Accompanying Sound of Geometric.",
-    "price" : 1244
+    "price" : 1244,
+    "amount" : 1
 },
 {
     "id" : 7,
     "img": "bauhaus-3.png",
     "name" : "Wassily Kandinsky Art",
     "description" : "To create a work of art is to create the world.",
-    "price" : 2050
+    "price" : 2050,
+    "amount" : 1
 },
 {
     "id" : 8,
     "img": "bauhaus-100.png",
     "name" : "Bauhaus 100",
     "description" : "Celebrating the 100th aniversary of the Bauhaus school",
-    "price" : 3520
+    "price" : 3520,
+    "amount" : 1
 },
 {
     "id" : 9,
     "img": "bauhaus-100-typography.png",
     "name" : "Bauhaus 100 typography",
     "description" : "Poster Design, using the 'joschmi' typeface as the main building blocks",
-    "price" : 987
+    "price" : 987,
+    "amount" : 1
 },
 {
     "id" : 10,
     "img": "bauhaus-cradle.png",
     "name" : "Bauhaus Cradle",
     "description" : "Michael Kimmerle gives an introduction to the world of the Bauhaus.",
-    "price" : 3520
+    "price" : 3520,
+    "amount" : 1
 },
 {
     "id" : 11,
     "img": "everything-starts-from-a-dot.png",
     "name" : "Everything starts from a dot",
     "description" : "Wassily Kandinsky was known as a painter for whom creating art was a profoundly spiritual act.",
-    "price" : 1570
+    "price" : 1570,
+    "amount" : 1
 },
 {
     "id" : 12,
     "img": "bauhaus-architecture.png",
     "name" : "Bauhaus Architecture",
     "description" : "Michael Kimmerle gives an introduction to the world of the Bauhaus.",
-    "price" : 2089
+    "price" : 2089,
+    "amount" : 1
 },
 {
     "id" : 13,
     "img": "bauhaus-bauspiel.png",
     "name" : "Bauhaus Bauspiel",
     "description" : "Alma Siedhoff-Buscher designed this Bauhaus Bauspiel in 1923 as part of the children’s room in the house “Am Horn” in Weimar, Germany.",
-    "price" : 1120
+    "price" : 1120,
+    "amount" : 1
 },
 {
     "id" : 14,
     "img": "less-is-more (1).png",
     "name" : "Less is more",
     "description" : "This was the motto of Ludwig Mies van der Rohe, an advocate of minimalism in architecture.",
-    "price" : 1100
+    "price" : 1100,
+    "amount" : 1
 },
 {
     "id" : 15,
