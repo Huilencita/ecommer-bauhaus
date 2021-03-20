@@ -2,7 +2,7 @@
 function CartFunctions() {
     this.products = async () => {
         try {
-            const res = await fetch('data.json');
+            const res = await fetch('scripts/data.json');
             const data = await res.json();
             displayCards(data);
             this.saveStorageProducts(data);
